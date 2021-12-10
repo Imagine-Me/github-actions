@@ -2,7 +2,7 @@ name: Shell commands
 on: [push]
 
 jobs:
-  run-shell-commands: 
+  run-shell-commands:
     runs-on: ubuntu-20.04
     steps:
       - name: echo string
@@ -16,3 +16,10 @@ jobs:
           import platform
           print (platform.processor())
         shell: python
+  run-windows-commands:
+    runs-on: windows-latest
+    steps:
+      - name: Directory  Powershell
+        run: Get-Location
+      - name: Directory bash
+        run: pwd
